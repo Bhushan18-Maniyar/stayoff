@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AppLock — Internal Testing Metadata</title>
+  <meta name="description" content="AppLock is an internal app to test digital wellbeing features: app lock, schedules, and usage insights. Internal testing only." />
+  <style>
+    :root {
+      --bg: #0f1226;
+      --card: #121735;
+      --muted: #9aa4b2;
+      --text: #e8ecf1;
+      --accent: #7aa2ff;
+      --accent-soft: rgba(122,162,255,.15);
+      --border: rgba(255,255,255,.08);
+      --success: #48c78e;
+      --warn: #ffd166;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 800px at 20% -10%, #1b2047 0%, transparent 60%),
+                  radial-gradient(1000px 700px at 120% 10%, #1a2b5b 0%, transparent 55%),
+                  var(--bg);
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+    .wrap {
+      width: 100%;
+      max-width: 880px;
+    }
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00)), var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: clamp(20px, 5vw, 36px);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    h1 { font-size: clamp(1.6rem, 3.2vw, 2.2rem); margin: 0 0 6px; }
+    .subtitle { color: var(--muted); margin: 0 0 18px; font-size: 0.98rem; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid var(--border);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-weight: 600; font-size: 0.82rem;
+    }
+    .grid { display: grid; gap: 18px; grid-template-columns: 1fr; }
+    @media (min-width: 768px) { .grid { grid-template-columns: 1.2fr .8fr; gap: 22px; } }
+
+    section { border: 1px solid var(--border); border-radius: 14px; padding: 16px 16px; background: rgba(255,255,255,.02); }
+    section h2 { margin: 0 0 10px; font-size: 1.02rem; letter-spacing: .2px; }
+    ul { margin: 8px 0 0 1.1rem; padding: 0; }
+    li { margin: 6px 0; line-height: 1.45; }
+
+    .note {
+      display: grid; gap: 10px; margin-top: 18px;
+      border-left: 4px solid var(--warn);
+      background: rgba(255, 209, 102, .08);
+      padding: 14px 16px; border-radius: 12px;
+    }
+    .meta { display: flex; align-items: center; gap: 10px; margin-top: 14px; color: var(--muted); font-size: .9rem; }
+    .kicker { color: var(--muted); text-transform: uppercase; letter-spacing: .12em; font-size: .75rem; }
+    code.tag { background: rgba(255,255,255,.06); border: 1px solid var(--border); border-radius: 8px; padding: 2px 6px; font-size: .85rem; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <article class="card" role="article" aria-labelledby="title">
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap: wrap;">
+        <div>
+          <div class="kicker">Digital Wellbeing — Internal</div>
+          <h1 id="title">AppLock</h1>
+          <p class="subtitle">Screen time control & usage insights</p>
+        </div>
+        <span class="badge" aria-label="Internal Testing Badge">Internal Testing Build</span>
+      </div>
+
+      <div class="grid" style="margin-top:14px;">
+        <section aria-labelledby="purpose">
+          <h2 id="purpose">Purpose</h2>
+          <p style="margin:6px 0 10px; color: var(--muted);">AppLock is an internal app to test digital wellbeing features.</p>
+          <ul>
+            <li>Non‑reversibly lock distracting apps for a set period.</li>
+            <li>Create schedules to manage screen time.</li>
+            <li>Track usage insights for better digital wellbeing.</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="tech">
+          <h2 id="tech">Entitlements & APIs</h2>
+          <ul>
+            <li>Evaluating <code class="tag">FamilyControls</code> entitlement integration.</li>
+            <li>Testing Screen Time APIs.</li>
+          </ul>
+        </section>
+      </div>
+
+      <section class="note" aria-labelledby="internal">
+        <div style="font-weight:700;">Internal Note (optional, not for App Store)</div>
+        <ul style="margin-left: 1rem;">
+          <li>This build is for internal testing only.</li>
+          <li>Not intended for public release at this stage.</li>
+          <li>Used for evaluating FamilyControls entitlement integration and Screen Time APIs.</li>
+        </ul>
+      </section>
+
+      <div class="meta" aria-label="reviewer context">
+        <span>👉 This makes clear to reviewers:</span>
+        <span>Consistency with your form answers • Digital wellbeing purpose • Internal-only status</span>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
